@@ -1,0 +1,24 @@
+#######################################
+# Syntax Coloring Map For FileSystem Lib
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+FileSystem	KEYWORD1
+mount	KEYWORD1
+WriteNewFile	KEYWORD1
+ReadFile	KEYWORD1
+AppendTextToFile	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+

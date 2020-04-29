@@ -1,0 +1,30 @@
+{
+  "name": "FileSystem",
+  "version": "1.0.0",
+  "keywords": "SPIFFS, FILE, ACCSES, READ, WRITE, APPEND",
+  "description": "A library to get Access to the spiffs filesystem on ESP",
+  "authors":
+    [{
+      "name": "Th0m4sK",
+      "email": "Thomas@cyber42.de",
+      "maintainer": true
+    }],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Th0m4sK/FileSystem"
+  },
+  "frameworks": "arduino",
+  "platforms": [
+      "espressif"
+  ],
+  "dependencies": [
+    {
+      "name": "SerialDebug",
+      "authors": "Th0m4sK",
+      "frameworks": "arduino"
+    }
+  ],
+  "export": {
+    "exclude": "*.pdf"
+  }
+}

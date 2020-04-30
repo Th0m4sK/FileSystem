@@ -19,7 +19,7 @@
   ],
   "dependencies": [
     {
-      "name": "SerialDebug",
+      "name": "SerialDebugTHK",
       "authors": "Th0m4sK",
       "frameworks": "arduino"
     }

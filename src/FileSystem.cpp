@@ -39,10 +39,10 @@ FileSystem::FileSystem(LEVEL DebLvl)
 
 boolean FileSystem::mount()
 {
-    if (SPIFFS.begin())
+    if (LittleFS.begin())
     {
         Debug.print("Mount SPIFFS", "true", DEBUG);
-        if (SPIFFS.info(fs_info))
+        if (LittleFS.info(fs_info))
         {
             Debug.print("used Bytes", String(fs_info.usedBytes), DEBUG);
             Debug.print("max Size Bytes", String(fs_info.totalBytes), DEBUG);
@@ -79,7 +79,7 @@ boolean FileSystem::WriteNewFile(char *fileName, char *txt)
 String FileSystem::ReadFile(char *fileName)
 {
     String txt = "";
-    if (!SPIFFS.exists(fileName)){
+    if (!LittleFS.exists(fileName)){
         Debug.print("File not exists", String(fileName), WARN);
         return "notExists";
     }
@@ -116,7 +116,7 @@ boolean FileSystem::AppendTextToFile(char *fileName, char *txt)
 
 File FileSystem::openFile(char *fileName, char *mode)
 {
-    File file = SPIFFS.open(fileName, mode);
+    File file = LittleFS.open(fileName, mode);
     if (file)
     {
        Debug.print("File OPEN" , String(fileName) , ERROR);

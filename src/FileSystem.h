@@ -31,7 +31,7 @@
 #pragma once
 #include <Arduino.h>
 #include <LittleFS.h>
-#include <SerialDebug.h>
+
 
 class FileSystem
 
@@ -43,7 +43,7 @@ private:
   File openFile(char *fileName,char * mode);
 
 public:
-    FileSystem(LEVEL debug);
+    FileSystem();
    
     boolean mount();
     boolean WriteNewFile (char* fileName, char* txt);

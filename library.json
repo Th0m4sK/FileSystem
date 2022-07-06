@@ -1,6 +1,6 @@
 {
   "name": "FileSystem",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "keywords": "LittleFS, FILE, ACCSES, READ, WRITE, APPEND",
   "description": "A library to get Access to the LittleFS filesystem on ESP",
   "authors":

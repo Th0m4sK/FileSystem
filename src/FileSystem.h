@@ -43,7 +43,7 @@ private:
   File openFile(char *fileName,char * mode);
 
 public:
-    FileSystem();
+    FileSystem(void);
    
     boolean mount();
     boolean WriteNewFile (char* fileName, char* txt);

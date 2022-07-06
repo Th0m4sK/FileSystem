@@ -30,29 +30,24 @@
 
 #include <FileSystem.h>
 FSInfo fs_info;
-SerialDebug Debug(ALL);
 
-FileSystem::FileSystem(LEVEL DebLvl)
+
+FileSystem::FileSystem()
 {
-    Debug.setDebugLevel(DebLvl);
+    
 }
 
 boolean FileSystem::mount()
 {
     if (LittleFS.begin())
     {
-        Debug.print("Mount SPIFFS", "true", DEBUG);
+        
         if (LittleFS.info(fs_info))
         {
-            Debug.print("used Bytes", String(fs_info.usedBytes), DEBUG);
-            Debug.print("max Size Bytes", String(fs_info.totalBytes), DEBUG);
             return true;
         }
     }
-    else
-    {
-        Debug.print("Mount SPIFFS", "true", ERROR);
-    }
+ 
     return false;
 }
 
@@ -64,13 +59,11 @@ boolean FileSystem::WriteNewFile(char *fileName, char *txt)
     file.close();
     if (bytesWritten > 0)
     {
-        Debug.print("File write", "success", DEBUG);
-        Debug.print("Bytes written", String(bytesWritten), DEBUG);
-        return true;
+                return true;
     }
     else
     {
-        Debug.print("File write", "failed", ERROR);
+        
         return false;
     }
 }
@@ -80,7 +73,7 @@ String FileSystem::ReadFile(char *fileName)
 {
     String txt = "";
     if (!LittleFS.exists(fileName)){
-        Debug.print("File not exists", String(fileName), WARN);
+        
         return "notExists";
     }
     File file = openFile(fileName, (char *)"r");
@@ -101,13 +94,12 @@ boolean FileSystem::AppendTextToFile(char *fileName, char *txt)
     file.close();
     if (bytesWritten > 0)
     {
-        Debug.print("Data append to file", "success", DEBUG);
-        Debug.print("Bytes written", String(bytesWritten), DEBUG);
+        
         return true;
     }
     else
     {
-        Debug.print("Data append to file", "failed", ERROR);
+        
         return false;
     }
 }
@@ -117,15 +109,6 @@ boolean FileSystem::AppendTextToFile(char *fileName, char *txt)
 File FileSystem::openFile(char *fileName, char *mode)
 {
     File file = LittleFS.open(fileName, mode);
-    if (file)
-    {
-       Debug.print("File OPEN" , String(fileName) , ERROR);
-    }else
-    
-    {
-        Debug.print("Can not open", String(fileName), ERROR);
-
-    }
-    
+        
     return file;
 }

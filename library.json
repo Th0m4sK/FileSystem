@@ -1,8 +1,8 @@
 {
   "name": "FileSystem",
-  "version": "1.0.0",
-  "keywords": "SPIFFS, FILE, ACCSES, READ, WRITE, APPEND",
-  "description": "A library to get Access to the spiffs filesystem on ESP",
+  "version": "1.0.1",
+  "keywords": "LittleFS, FILE, ACCSES, READ, WRITE, APPEND",
+  "description": "A library to get Access to the LittleFS filesystem on ESP",
   "authors":
     [{
       "name": "Th0m4sK",
@@ -17,13 +17,7 @@
   "platforms": [
       "espressif"
   ],
-  "dependencies": [
-    {
-      "name": "SerialDebugTHK",
-      "authors": "Th0m4sK",
-      "frameworks": "arduino"
-    }
-  ],
+  
   "export": {
     "exclude": "*.pdf"
   }

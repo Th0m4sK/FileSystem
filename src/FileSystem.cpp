@@ -32,7 +32,7 @@
 FSInfo fs_info;
 
 
-FileSystem::FileSystem()
+FileSystem::FileSystem(void)
 {
     
 }
